@@ -1,0 +1,28 @@
+[
+    {
+        "string": "Khush",
+        "int": 1,
+        "float": 1.1,
+        "bool": true
+    },
+    {
+        "1": "1",
+        "2": null,
+        "3": true
+    },
+    {
+        "string": "Khush",
+        "int": 1,
+        "float": 1.1,
+        "bool": true,
+        "array": [1, 2, 3],
+        "object": {
+            "string": "Khush",
+            "int": 1,
+            "float": 1.1,
+            "bool": true,
+            "array": [1, 2, 3]
+        },
+        "null": null
+    }
+]
