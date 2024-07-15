@@ -7,14 +7,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/KhushPatibandha/jsonParser/src/lexer"
-	"github.com/KhushPatibandha/jsonParser/src/parser"
+	jsonparser "github.com/KhushPatibandha/jsonParser"
 )
 
 func main() {
 	var buf bytes.Buffer
 	reader := bufio.NewReader(os.Stdin)
-
 	for {
 		line, err := reader.ReadString('\n')
 		if err != nil {
@@ -27,18 +25,11 @@ func main() {
 		}
 		buf.WriteString(line)
 	}
-	lines := buf.String()
-	// fmt.Println(lines)
+	jsonString := buf.String()
 
-	tokens := lexer.Tokenizer(lines)
-	// for _, token := range tokens {
-	// 	token.Debug()
-	// }
-
-	parser := parser.NewParser(tokens)
-	resultMap, err := parser.Parse()
+	result, err := jsonparser.ParseIt(jsonString)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(resultMap)
+	fmt.Println(result)
 }
