@@ -33,7 +33,7 @@ func Tokenizer(source string) []Token {
 			}
 		}
 		if !matched {
-			panic(fmt.Sprintf("lexer error: unrecognized token near '%v'", lexer.remainder()))
+			panic(fmt.Sprintf("lexer error: unrecognized token '%v' near --> '%v'", lexer.remainder()[:1], lexer.remainder()))
 		}
 	}
 	lexer.push(NewToken(EOF, "EOF"))
