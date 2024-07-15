@@ -1,6 +1,29 @@
+
+# Json Parser
+
 Json Parser from scratch in go
-just clone the repo and run
-```
-go run src/main.go
-```
-and paste the json blob. apis adding soon
+
+## Test Locally
+
+### Clone the project
+`git clone https://github.com/KhushPatibandha/jsonParser.git`
+
+### Navigate to the project directory
+`cd .\jsonParser\`
+
+### Test
+`go run cmd/main.go`
+
+And paste your json blob.
+
+## Use as a package
+
+### Get the package
+`go get github.com/KhushPatibandha/jsonParser`
+
+### Usage
+`
+    result, err := jsonparser.ParseIt(<your json string>)
+`
+
+The method `jsonparser.ParseIt(jsonString)` takes in a string and returns `interface{}, error`
