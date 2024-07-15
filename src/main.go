@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/KhushPatibandha/jsonParser/src/lexer"
+	"github.com/KhushPatibandha/jsonParser/src/parser"
 )
 
 func main() {
@@ -30,7 +31,14 @@ func main() {
 	// fmt.Println(lines)
 
 	tokens := lexer.Tokenizer(lines)
-	for _, token := range tokens {
-		token.Debug()
+	// for _, token := range tokens {
+	// 	token.Debug()
+	// }
+
+	parser := parser.NewParser(tokens)
+	resultMap, err := parser.Parse()
+	if err != nil {
+		panic(err)
 	}
+	fmt.Println(resultMap)
 }
