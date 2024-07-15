@@ -1,0 +1,310 @@
+{
+    "ecosystemData": {
+        "biomes": [
+            {
+                "name": "Tropical Rainforest",
+                "characteristics": {
+                    "climate": {
+                        "temperature": {
+                            "average": 25,
+                            "variations": [
+                                { "season": "wet", "range": [23, 28] },
+                                { "season": "dry", "range": [22, 30] }
+                            ]
+                        },
+                        "precipitation": {
+                            "annual": 2000,
+                            "monthly": [
+                                { "month": "January", "amount": 200 },
+                                { "month": "February", "amount": 180 },
+                                { "month": "March", "amount": 220 },
+                                {
+                                    "month": "April",
+                                    "amount": 190,
+                                    "events": [
+                                        {
+                                            "type": "storm",
+                                            "intensity": "high",
+                                            "duration": 2
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "biodiversity": {
+                        "floraSpecies": [
+                            {
+                                "name": "Orchid",
+                                "varieties": [
+                                    {
+                                        "scientificName": "Phalaenopsis",
+                                        "colors": ["white", "pink", "purple"]
+                                    },
+                                    {
+                                        "scientificName": "Cattleya",
+                                        "colors": [
+                                            "lavender",
+                                            "white",
+                                            "yellow",
+                                            "red"
+                                        ]
+                                    }
+                                ],
+                                "habitat": {
+                                    "canopyLayer": "epiphyte",
+                                    "soilTypes": [
+                                        "humus-rich",
+                                        "well-draining"
+                                    ],
+                                    "lightRequirements": {
+                                        "intensity": "filtered",
+                                        "duration": {
+                                            "summer": 14,
+                                            "winter": 12,
+                                            "variations": [
+                                                {
+                                                    "condition": "cloudy",
+                                                    "reduction": 2
+                                                },
+                                                {
+                                                    "condition": "dense canopy",
+                                                    "reduction": 3
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "faunaSpecies": [
+                            {
+                                "name": "Jaguar",
+                                "scientificName": "Panthera onca",
+                                "diet": [
+                                    { "prey": "Capybara", "preferenceRank": 1 },
+                                    { "prey": "Deer", "preferenceRank": 2 },
+                                    {
+                                        "prey": "Fish",
+                                        "preferenceRank": 3,
+                                        "conditions": [
+                                            {
+                                                "season": "dry",
+                                                "availability": "high"
+                                            },
+                                            {
+                                                "season": "wet",
+                                                "availability": "moderate"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "behavior": {
+                                    "activity": [
+                                        {
+                                            "period": "nocturnal",
+                                            "primaryActions": [
+                                                "hunting",
+                                                "patrolling"
+                                            ]
+                                        },
+                                        {
+                                            "period": "crepuscular",
+                                            "primaryActions": [
+                                                "resting",
+                                                "grooming"
+                                            ]
+                                        }
+                                    ],
+                                    "socialStructure": {
+                                        "type": "solitary",
+                                        "exceptions": [
+                                            {
+                                                "scenario": "mating",
+                                                "duration": "1-2 weeks"
+                                            },
+                                            {
+                                                "scenario": "mother with cubs",
+                                                "duration": "up to 2 years"
+                                            }
+                                        ]
+                                    },
+                                    "territorySize": {
+                                        "average": 100,
+                                        "unit": "km²",
+                                        "factors": [
+                                            {
+                                                "influence": "prey density",
+                                                "correlation": "negative"
+                                            },
+                                            {
+                                                "influence": "human encroachment",
+                                                "correlation": "positive",
+                                                "notes": [
+                                                    "Leads to smaller territories",
+                                                    "Increases conflict potential"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "conservation": {
+                    "threats": [
+                        {
+                            "type": "Deforestation",
+                            "severity": "high",
+                            "causes": [
+                                "Agriculture expansion",
+                                "Logging",
+                                "Urbanization"
+                            ],
+                            "impacts": [
+                                {
+                                    "target": "Habitat",
+                                    "consequence": "Fragmentation",
+                                    "secondaryEffects": [
+                                        {
+                                            "issue": "Reduced biodiversity",
+                                            "scale": 8
+                                        },
+                                        { "issue": "Soil erosion", "scale": 7 },
+                                        {
+                                            "issue": "Climate change",
+                                            "scale": 9,
+                                            "details": {
+                                                "carbonRelease": {
+                                                    "amount": "high",
+                                                    "sources": [
+                                                        "Burning",
+                                                        "Decomposition"
+                                                    ],
+                                                    "globalImpact": {
+                                                        "temperature": "+0.1°C",
+                                                        "timeline": "per decade",
+                                                        "uncertainties": [
+                                                            "Feedback loops",
+                                                            "Tipping points"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "initiatives": [
+                        {
+                            "name": "Canopy Corridors",
+                            "goal": "Reconnect fragmented forest areas",
+                            "methods": [
+                                {
+                                    "technique": "Reforestation",
+                                    "targetAreas": [
+                                        "Cleared lands",
+                                        "Degraded pastures"
+                                    ],
+                                    "species": [
+                                        {
+                                            "name": "Ceiba pentandra",
+                                            "growthRate": "fast",
+                                            "ecologicalValue": "high"
+                                        },
+                                        {
+                                            "name": "Swietenia macrophylla",
+                                            "growthRate": "moderate",
+                                            "economicValue": "high"
+                                        }
+                                    ],
+                                    "challenges": [
+                                        {
+                                            "factor": "Soil quality",
+                                            "mitigation": [
+                                                "Composting",
+                                                "Mycorrhizal inoculation"
+                                            ]
+                                        },
+                                        {
+                                            "factor": "Water availability",
+                                            "mitigation": [
+                                                "Drip irrigation",
+                                                "Mulching"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "technique": "Agroforestry",
+                                    "benefits": [
+                                        {
+                                            "ecological": "Increased habitat",
+                                            "score": 8
+                                        },
+                                        {
+                                            "economic": "Sustainable income",
+                                            "score": 7
+                                        },
+                                        {
+                                            "social": "Food security",
+                                            "score": 9
+                                        }
+                                    ],
+                                    "implementation": {
+                                        "phases": [
+                                            {
+                                                "stage": "Planning",
+                                                "duration": "6 months",
+                                                "keyActivities": [
+                                                    "Stakeholder engagement",
+                                                    "Site assessment",
+                                                    "Species selection"
+                                                ]
+                                            },
+                                            {
+                                                "stage": "Planting",
+                                                "duration": "1-2 years",
+                                                "keyActivities": [
+                                                    "Seedling nursery establishment",
+                                                    "Field preparation",
+                                                    "Planting and initial care"
+                                                ]
+                                            },
+                                            {
+                                                "stage": "Monitoring",
+                                                "duration": "Ongoing",
+                                                "keyActivities": [
+                                                    "Growth assessment",
+                                                    "Biodiversity surveys",
+                                                    "Socio-economic impact evaluation"
+                                                ]
+                                            }
+                                        ],
+                                        "partners": [
+                                            {
+                                                "name": "Local communities",
+                                                "role": "Implementation and maintenance"
+                                            },
+                                            {
+                                                "name": "NGOs",
+                                                "role": "Technical support and funding"
+                                            },
+                                            {
+                                                "name": "Government agencies",
+                                                "role": "Policy support and land allocation"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

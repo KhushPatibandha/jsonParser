@@ -1,0 +1,80 @@
+{
+    "person": {
+        "name": "Alice",
+        "attributes": [
+            {
+                "height": "5ft 7in",
+                "age": 29,
+                "hobbies": [
+                    "reading",
+                    "coding",
+                    {
+                        "sports": ["basketball", "tennis"]
+                    }
+                ]
+            },
+            {
+                "occupation": "Engineer",
+                "projects": [
+                    {
+                        "name": "Project X",
+                        "duration": "2 years",
+                        "team": [
+                            {
+                                "role": "Manager",
+                                "experience": ["5 years", "10 projects"]
+                            },
+                            {
+                                "role": "Developer",
+                                "skills": [
+                                    "JavaScript",
+                                    "Python",
+                                    {
+                                        "frameworks": ["React", "Django"]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "company": {
+        "departments": [
+            {
+                "name": "Engineering",
+                "employees": [
+                    {
+                        "name": "Bob",
+                        "roles": [
+                            "Developer",
+                            {
+                                "specialties": ["Frontend", "Backend"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "HR",
+                "policies": [
+                    {
+                        "policyName": "Leave Policy",
+                        "details": {
+                            "annualLeave": "20 days",
+                            "sickLeave": "10 days",
+                            "maternityLeave": {
+                                "duration": "6 months",
+                                "conditions": [
+                                    "Full pay for first 3 months",
+                                    "Half pay for next 3 months"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

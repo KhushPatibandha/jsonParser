@@ -1,0 +1,419 @@
+{
+    "megaStructure": {
+        "level1": [
+            {
+                "id": "A1",
+                "nestedObject": {
+                    "array1": [
+                        {
+                            "deepObject1": {
+                                "deeperArray": [
+                                    [
+                                        { "key1": "value1" },
+                                        {
+                                            "key2": "value2",
+                                            "subArray": [
+                                                [1, 2],
+                                                [
+                                                    3,
+                                                    4,
+                                                    [5, 6, { "nested": "here" }]
+                                                ]
+                                            ]
+                                        }
+                                    ],
+                                    {
+                                        "mixedContent": [
+                                            1,
+                                            "string",
+                                            {
+                                                "objectInArray": {
+                                                    "moreNesting": {
+                                                        "andMore": [
+                                                            {
+                                                                "deepest": "perhaps"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            [
+                                                {
+                                                    "surprise": [
+                                                        "nested",
+                                                        "array",
+                                                        {
+                                                            "inObject": {
+                                                                "inArray": [
+                                                                    1, 2, 3
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                [
+                                                    "multi",
+                                                    "dimensional",
+                                                    ["array"]
+                                                ]
+                                            ]
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "deepObject2": {
+                                "arrayOfArrays": [
+                                    [1, 2, 3],
+                                    [
+                                        4,
+                                        5,
+                                        6,
+                                        [
+                                            7,
+                                            8,
+                                            {
+                                                "nestedAgain": {
+                                                    "andAgain": [
+                                                        9,
+                                                        10,
+                                                        { "oneMore": [11, 12] }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    ]
+                                ],
+                                "objectWithArrays": {
+                                    "array1": [1, 2, 3],
+                                    "array2": [4, 5, 6],
+                                    "nestedObjects": [
+                                        {
+                                            "a": 1,
+                                            "b": [
+                                                2,
+                                                3,
+                                                {
+                                                    "c": [
+                                                        4,
+                                                        5,
+                                                        {
+                                                            "d": [
+                                                                6,
+                                                                7,
+                                                                { "e": 8 }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "x": {
+                                                "y": {
+                                                    "z": [
+                                                        9,
+                                                        10,
+                                                        {
+                                                            "deepZ": {
+                                                                "evenDeeper": [
+                                                                    11,
+                                                                    12,
+                                                                    [13, 14, 15]
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "array2": [
+                        [
+                            {
+                                "nested1": {
+                                    "nested2": { "nested3": [1, 2, 3] }
+                                }
+                            },
+                            {
+                                "nested4": [
+                                    {
+                                        "nested5": [
+                                            {
+                                                "nested6": {
+                                                    "nested7": [4, 5, 6]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        {
+                            "complexNesting": {
+                                "level1": [
+                                    {
+                                        "level2": {
+                                            "level3": [
+                                                {
+                                                    "level4": [
+                                                        1,
+                                                        2,
+                                                        {
+                                                            "level5": {
+                                                                "level6": [
+                                                                    3,
+                                                                    4,
+                                                                    {
+                                                                        "level7": [
+                                                                            5,
+                                                                            6, 7
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "alternateLevel4": {
+                                                        "deeperAlternate": {
+                                                            "evenDeeper": [
+                                                                8, 9, 10
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "A2",
+                "arrayOfMixedObjects": [
+                    { "simple": "object" },
+                    [
+                        1,
+                        2,
+                        3,
+                        {
+                            "notSoSimple": {
+                                "deeper": [4, 5, 6, { "evenDeeper": [7, 8, 9] }]
+                            }
+                        }
+                    ],
+                    {
+                        "complexObject": {
+                            "nestedArray": [
+                                [
+                                    {
+                                        "layer1": {
+                                            "layer2": { "layer3": [1, 2, 3] }
+                                        }
+                                    },
+                                    [
+                                        {
+                                            "layer4": [
+                                                {
+                                                    "layer5": {
+                                                        "layer6": [4, 5, 6]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ],
+                                {
+                                    "mixedLayers": [
+                                        1,
+                                        [
+                                            2,
+                                            3,
+                                            {
+                                                "nested": [
+                                                    4,
+                                                    5,
+                                                    {
+                                                        "moreNested": [
+                                                            6,
+                                                            7,
+                                                            { "deepest": 8 }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        {
+                                            "objectInArray": {
+                                                "arrayInObject": [
+                                                    9,
+                                                    10,
+                                                    { "finalLayer": [11, 12] }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "level2": {
+            "deeplyNestedStructure": {
+                "branch1": [
+                    {
+                        "subBranch1": [
+                            [1, 2, 3],
+                            [
+                                4,
+                                5,
+                                {
+                                    "nested": [
+                                        6,
+                                        7,
+                                        {
+                                            "deeper": [
+                                                8,
+                                                9,
+                                                { "evenDeeper": [10, 11, 12] }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        ],
+                        "subBranch2": {
+                            "nestedObject": {
+                                "arrayProperty": [
+                                    { "obj1": { "arr1": [1, 2, 3] } },
+                                    {
+                                        "obj2": {
+                                            "arr2": [
+                                                4,
+                                                5,
+                                                { "nested": [6, 7, 8] }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "objectProperty": {
+                                    "nestedArray": [
+                                        [
+                                            9,
+                                            10,
+                                            {
+                                                "deepObj": {
+                                                    "deeperArray": [
+                                                        11,
+                                                        12,
+                                                        [13, 14, 15]
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        {
+                                            "mixedContent": [
+                                                16,
+                                                [17, 18],
+                                                {
+                                                    "lastObj": {
+                                                        "lastArray": [19, 20]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "branch2": {
+                    "arrayBranch": [
+                        [
+                            { "nested1": [1, 2, 3] },
+                            {
+                                "nested2": [
+                                    4,
+                                    5,
+                                    {
+                                        "nested3": [
+                                            6,
+                                            7,
+                                            { "nested4": [8, 9, 10] }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        {
+                            "objectInArrayInObject": {
+                                "property1": [
+                                    {
+                                        "subProp1": [
+                                            1,
+                                            2,
+                                            {
+                                                "deeperProp": [
+                                                    3,
+                                                    4,
+                                                    {
+                                                        "evenDeeperProp": [
+                                                            5, 6, 7
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "subProp2": {
+                                            "nestedObj": {
+                                                "nestedArray": [
+                                                    8,
+                                                    9,
+                                                    [
+                                                        10,
+                                                        11,
+                                                        { "finalNest": 12 }
+                                                    ]
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ],
+                                "property2": {
+                                    "arrayOfArrays": [
+                                        [1, 2, [3, 4, [5, 6]]],
+                                        [7, [8, [9, [10, [11, 12]]]]],
+                                        {
+                                            "surprise": {
+                                                "objectInArrayOfArrays": {
+                                                    "finalProperty": [
+                                                        13, 14, 15
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
