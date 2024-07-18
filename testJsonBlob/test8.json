@@ -1,0 +1,107 @@
+{
+    "level1": {
+        "value1": 1.23e3,
+        "level2": {
+            "value2": -4.56e-7,
+            "level3": {
+                "value3": 7.89e10,
+                "level4": {
+                    "value4": 0.123e-2,
+                    "array": [
+                        1.0,
+                        -2.0e1,
+                        3.0e2,
+                        {
+                            "nestedValue1": 4.0e3,
+                            "nestedLevel5": {
+                                "nestedValue2": -5.0e4,
+                                "nestedLevel6": {
+                                    "nestedValue3": 6.0e-5,
+                                    "nestedLevel7": {
+                                        "nestedValue4": -7.0e6,
+                                        "nestedArray": [
+                                            8.0e7,
+                                            -9.0e8,
+                                            1.0e9,
+                                            {
+                                                "deepValue1": 2.0e10,
+                                                "deepLevel8": {
+                                                    "deepValue2": -3.0e-11,
+                                                    "deepLevel9": {
+                                                        "deepValue3": 4.0e12,
+                                                        "deepArray": [
+                                                            5.0e-13,
+                                                            -6.0e14,
+                                                            7.0e15,
+                                                            {
+                                                                "deeperValue1": 8.0e-16,
+                                                                "deeperLevel10": {
+                                                                    "deeperValue2": -9.0e17,
+                                                                    "deeperLevel11": {
+                                                                        "deeperValue3": 1.0e18,
+                                                                        "deeperArray": [
+                                                                            2.0e19,
+                                                                            -3.0e20,
+                                                                            4.0e-21,
+                                                                            {
+                                                                                "deepestValue1": 5.0e22,
+                                                                                "deepestLevel12": {
+                                                                                    "deepestValue2": -6.0e23,
+                                                                                    "deepestLevel13": {
+                                                                                        "deepestValue3": 7.0e-24,
+                                                                                        "deepestArray": [
+                                                                                            8.0e25,
+                                                                                            -9.0e26,
+                                                                                            1.0e27,
+                                                                                            {
+                                                                                                "finalValue1": 2.0e28,
+                                                                                                "finalLevel14": {
+                                                                                                    "finalValue2": -3.0e29,
+                                                                                                    "finalArray": [
+                                                                                                        4.0e30,
+                                                                                                        -5.0e-31,
+                                                                                                        6.0e32,
+                                                                                                        {
+                                                                                                            "ultimateValue1": 7.0e33,
+                                                                                                            "ultimateLevel15": {
+                                                                                                                "ultimateValue2": -8.0e34,
+                                                                                                                "ultimateArray": [
+                                                                                                                    9.0e-35,
+                                                                                                                    -1.0e36,
+                                                                                                                    2.0e37,
+                                                                                                                    {
+                                                                                                                        "endValue1": 3.0e-38,
+                                                                                                                        "endArray": [
+                                                                                                                            4.0e39,
+                                                                                                                            -5.0e40
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

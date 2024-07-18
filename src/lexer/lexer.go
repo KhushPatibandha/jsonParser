@@ -81,6 +81,8 @@ func createLexer(source string) *lexer {
 			{regexp.MustCompile(`,`), defaultHandler(COMMA, ",")},
 			{regexp.MustCompile(`:`), defaultHandler(COLON, ":")},
 			{regexp.MustCompile(`-`), defaultHandler(DASH, "-")},
+			{regexp.MustCompile(`\+`), defaultHandler(PLUS, "+")},
+			{regexp.MustCompile(`[eE]`), defaultHandler(EXPONENT, "e")},
 			{regexp.MustCompile(`true`), defaultHandler(BOOLEAN, "true")},
 			{regexp.MustCompile(`false`), defaultHandler(BOOLEAN, "false")},
 			{regexp.MustCompile(`null`), defaultHandler(NULL, "null")},

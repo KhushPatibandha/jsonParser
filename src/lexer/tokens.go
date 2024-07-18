@@ -17,6 +17,8 @@ const (
 	COMMA
 	COLON
 	DASH
+	PLUS
+	EXPONENT
 	EOF
 )
 
@@ -61,6 +63,10 @@ func TokenKindString(kind TokenKind) string {
 		return "colon"
 	case DASH:
 		return "dash"
+	case PLUS:
+		return "plus"
+	case EXPONENT:
+		return "exponent"
 	case EOF:
 		return "EOF"
 	default:
