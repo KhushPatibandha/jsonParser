@@ -2,6 +2,8 @@ package parser
 
 import (
 	"fmt"
+	"math"
+	"strconv"
 
 	"github.com/KhushPatibandha/jsonParser/src/lexer"
 )
@@ -80,6 +82,35 @@ func (p *Parser) parseNumber() (string, error) {
 		return "", fmt.Errorf("expected number after '-', found %v", p.peek())
 	}
 	number := p.advance().Value
+
+	if p.peek().Kind == lexer.EXPONENT {
+		p.advance()
+		expNegative := false
+		if p.peek().Kind == lexer.DASH {
+			expNegative = true
+			p.advance()
+		} else if p.peek().Kind == lexer.PLUS {
+			p.advance()
+		}
+		if p.peek().Kind != lexer.NUMBER {
+			return "", fmt.Errorf("expected number after exponent, found %v", p.peek())
+		}
+		expNumber, err := strconv.Atoi(p.advance().Value)
+		if err != nil {
+			return "", err
+		}
+		if expNegative {
+			expNumber = -expNumber
+		}
+
+		baseNumber, err := strconv.ParseFloat(number, 64)
+		if err != nil {
+			return "", err
+		}
+
+		result := baseNumber * math.Pow10(expNumber)
+		number = strconv.FormatFloat(result, 'f', -1, 64)
+	}
 	if isNegative {
 		number = "-" + number
 	}
