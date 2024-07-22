@@ -1,0 +1,17 @@
+{
+    "escape_characters": {
+        "double_quote": "This string has a \"quoted\" word.",
+        "backslash": "This string has a backslash: \\",
+        "forward_slash": "Forward slashes can be escaped: /",
+        "newline": "This string has a newline:\nThis is on a new line.",
+        "tab": "This string has a tab:\tThis is after a tab.",
+        "backspace": "This string has a backspace:\bThis is after a backspace.",
+        "mixed": "Mixed escapes: \"\\/ \n\t\b",
+        "repeated": "Repeated escapes: \\\\ \"\" // \n\n \t\t \b\b",
+        "edge_cases": {
+            "escape_at_end": "This string ends with a backslash\\",
+            "only_escape": "\\",
+            "empty_with_escape": ""
+        }
+    }
+}

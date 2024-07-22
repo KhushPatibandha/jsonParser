@@ -3,6 +3,7 @@ package lexer
 import (
 	"fmt"
 	"regexp"
+	"strings"
 )
 
 type regexHandler func(lex *lexer, regex *regexp.Regexp)
@@ -73,7 +74,7 @@ func createLexer(source string) *lexer {
 		patterns: []regexPattern{
 			{regexp.MustCompile(`[0-9]+(\.[0-9]+)?`), numberHandler},
 			{regexp.MustCompile(`\s+`), skipHandler},
-			{regexp.MustCompile(`"[^"]*"`), stringHandler},
+			{regexp.MustCompile(`"(?:\\.|[^"])*"`), stringHandler},
 			{regexp.MustCompile(`\[`), defaultHandler(LEFT_SQ_BRACKET, "[")},
 			{regexp.MustCompile(`\]`), defaultHandler(RIGHT_SQ_BRACKET, "]")},
 			{regexp.MustCompile(`\{`), defaultHandler(LEFT_CURLY_BRACKET, "{")},
@@ -103,10 +104,48 @@ func numberHandler(lexer *lexer, regex *regexp.Regexp) {
 }
 
 func stringHandler(lexer *lexer, regex *regexp.Regexp) {
-	match := regex.FindStringIndex(lexer.remainder())
-	stringLiteral := lexer.remainder()[match[0]+1 : match[1]-1]
+	match := regex.FindString(lexer.remainder())
+	stringLiteral := match[1 : len(match)-1]
+	stringLiteral = handleEscapeCharacters(stringLiteral)
 	lexer.push(NewToken(STRING, stringLiteral))
-	lexer.advanceN(len(stringLiteral) + 2)
+	lexer.advanceN(len(match))
+}
+
+func handleEscapeCharacters(s string) string {
+	var result strings.Builder
+	escape := false
+
+	for _, char := range s {
+		if escape {
+			switch char {
+			case '"':
+				result.WriteRune('"')
+			case '\\':
+				result.WriteRune('\\')
+			case '/':
+				result.WriteRune('/')
+			case 'b':
+				result.WriteRune('\b')
+			case 'f':
+				result.WriteRune('\f')
+			case 'n':
+				result.WriteRune('\n')
+			case 'r':
+				result.WriteRune('\r')
+			case 't':
+				result.WriteRune('\t')
+			default:
+				result.WriteRune('\\')
+				result.WriteRune(char)
+			}
+			escape = false
+		} else if char == '\\' {
+			escape = true
+		} else {
+			result.WriteRune(char)
+		}
+	}
+	return result.String()
 }
 
 func skipHandler(lexer *lexer, regex *regexp.Regexp) {
