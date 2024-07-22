@@ -28,10 +28,6 @@ func (p *Parser) Parse() (interface{}, error) {
 	if endBracket.Kind == lexer.COMMA {
 		return nil, fmt.Errorf("Closing Parentheses Missing: Expected '}' or ']' at the end, found ','")
 	}
-	checkForCommaBeforeEndBracket := p.tokens[len(p.tokens)-3]
-	if checkForCommaBeforeEndBracket.Kind == lexer.COMMA {
-		return nil, fmt.Errorf("Trailing comma before Closing Parentheses: Expected another entry or '}' or ']'")
-	}
 	if endBracket.Kind != lexer.RIGHT_CURLY_BRACKET && endBracket.Kind != lexer.RIGHT_SQ_BRACKET {
 		return nil, fmt.Errorf("Closing Parentheses Missing: Expected '}' or ']'")
 	}
@@ -139,6 +135,10 @@ func (p *Parser) parseObject() (map[string]interface{}, error) {
 		if !p.match(lexer.COMMA) {
 			break
 		}
+
+		if p.peek().Kind == lexer.RIGHT_CURLY_BRACKET {
+			return nil, fmt.Errorf("json error:: trailing comma. Expected key-value pair after ',' found '}'")
+		}
 	}
 
 	if !p.match(lexer.RIGHT_CURLY_BRACKET) {
@@ -160,6 +160,10 @@ func (p *Parser) parseArray() ([]interface{}, error) {
 		arraySlice = append(arraySlice, value)
 		if !p.match(lexer.COMMA) {
 			break
+		}
+
+		if p.peek().Kind == lexer.RIGHT_SQ_BRACKET {
+			return nil, fmt.Errorf("json error:: trailing comma. Expected value after ',' found ']'")
 		}
 	}
 	if !p.match(lexer.RIGHT_SQ_BRACKET) {

@@ -22,7 +22,7 @@ type lexer struct {
 
 func Tokenizer(source string) []Token {
 	lexer := createLexer(source)
-	for !lexer.at_eof() {
+	for !lexer.atEOF() {
 		matched := false
 		for _, pattern := range lexer.patterns {
 			lineOfCode := pattern.regex.FindStringIndex(lexer.remainder())
@@ -60,7 +60,7 @@ func (lexer *lexer) push(token Token) {
 	lexer.Tokens = append(lexer.Tokens, token)
 }
 
-func (lexer *lexer) at_eof() bool {
+func (lexer *lexer) atEOF() bool {
 	return lexer.position >= len(lexer.source)
 }
 
