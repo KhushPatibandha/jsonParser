@@ -3,7 +3,9 @@ package lexer
 import (
 	"fmt"
 	"regexp"
+	"strconv"
 	"strings"
+	"unicode/utf16"
 )
 
 type regexHandler func(lex *lexer, regex *regexp.Regexp)
@@ -115,37 +117,64 @@ func handleEscapeCharacters(s string) string {
 	var result strings.Builder
 	escape := false
 
-	for _, char := range s {
+	for i := 0; i < len(s); i++ {
 		if escape {
-			switch char {
+			switch s[i] {
 			case '"':
-				result.WriteRune('"')
+				result.WriteByte('"')
 			case '\\':
-				result.WriteRune('\\')
+				result.WriteByte('\\')
 			case '/':
-				result.WriteRune('/')
+				result.WriteByte('/')
 			case 'b':
-				result.WriteRune('\b')
+				result.WriteByte('\b')
 			case 'f':
-				result.WriteRune('\f')
+				result.WriteByte('\f')
 			case 'n':
-				result.WriteRune('\n')
+				result.WriteByte('\n')
 			case 'r':
-				result.WriteRune('\r')
+				result.WriteByte('\r')
 			case 't':
-				result.WriteRune('\t')
+				result.WriteByte('\t')
+			case 'u':
+				if i+4 < len(s) {
+					unicode, err := unicodeHandler(s[i+1 : i+5])
+					if err != nil {
+						panic(fmt.Sprintf("lexer error: invalid unicode escape sequence '%v'", s[i:i+5]))
+					}
+					if utf16.IsSurrogate(unicode) && i+10 < len(s) && s[i+5:i+7] == "\\u" {
+						lowSurrogate, err := unicodeHandler(s[i+7 : i+11])
+						if err != nil {
+							panic(fmt.Sprintf("lexer error: invalid unicode escape sequence '%v'", s[i+7:i+11]))
+						}
+						unicode = utf16.DecodeRune(unicode, lowSurrogate)
+						i += 6
+					}
+					result.WriteRune(unicode)
+					i += 4
+				} else {
+					panic(fmt.Sprintf("lexer error: invalid unicode escape sequence '%v'", s[i:]))
+				}
 			default:
-				result.WriteRune('\\')
-				result.WriteRune(char)
+				result.WriteByte('\\')
+				result.WriteByte(s[i])
 			}
 			escape = false
-		} else if char == '\\' {
+		} else if s[i] == '\\' {
 			escape = true
 		} else {
-			result.WriteRune(char)
+			result.WriteByte(s[i])
 		}
 	}
 	return result.String()
+}
+
+func unicodeHandler(s string) (rune, error) {
+	n, err := strconv.ParseUint(s, 16, 16)
+	if err != nil {
+		return 0, err
+	}
+	return rune(n), nil
 }
 
 func skipHandler(lexer *lexer, regex *regexp.Regexp) {
